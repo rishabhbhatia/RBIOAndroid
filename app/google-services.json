@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "849117316776",
+    "project_id": "battleitout-145018"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:849117316776:android:0bbcb67a9d5b5e99",
+        "android_client_info": {
+          "package_name": "com.satiate.bio"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "849117316776-mm4g9gtoict6ai1g4i04j6f040ac0gua.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.satiate.bio",
+            "certificate_hash": "66EEDE0D0129571B5F3FC92FECDA056F56F13DEB"
+          }
+        },
+        {
+          "client_id": "849117316776-tmal1h6775ftvc0a0802tejd4hr2s19e.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCmfxQGCwKnGpjp1oc4Dnc2eX6GUIsE-0c"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 1
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
