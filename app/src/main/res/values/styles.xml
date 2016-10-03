@@ -1,11 +1,41 @@
 <resources>
 
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+
+        <!-- Login Screen -->
+        <style name="Login_Text_Label" parent="TextAppearance.Font.HelveticaNeue">
+            <item name="android:textSize">22sp</item>
+            <item name="android:textColor">@color/login_label</item>
+        </style>
+
+        <style name="Login_Button">
+            <item name="android:textSize">16sp</item>
+            <item name="android:background">@color/login_button_bg</item>
+            <item name="android:textAllCaps">true</item>
+            <item name="android:textColor">@android:color/white</item>
+        </style>
+
+        <style name="Login_Forgot_Pass" parent="TextAppearance.Font.HelveticaNeue">
+            <item name="android:textSize">15sp</item>
+            <item name="android:textAllCaps">true</item>
+            <item name="android:textColor">@color/login_button_bg</item>
+        </style>
+
+        <style name="TextAppearance.Font.HelveticaNeue" parent="android:TextAppearance">
+            <item name="fontPath">fonts/HelveticaNeue/HelveticaNeue-Medium.ttf</item>
+        </style>
+
+        <style name="TextAppearance.Font.HelveticaNeueBold" parent="android:TextAppearance">
+            <item name="fontPath">fonts/HelveticaNeue/HelveticaNeue-Bold.ttf</item>
+        </style>
+
+
     </style>
 
 </resources>
