@@ -6,5 +6,5 @@ package com.satiate.bio.utils;
 
 public class Const {
 
-    public static final String SOCIAL_NETWORK_TAG = "SOCIAL_NW_LOGIN";
+    public static final String TAG = "rishabh";
 }

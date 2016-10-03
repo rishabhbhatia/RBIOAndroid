@@ -8,8 +8,10 @@
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
 
+        </style>
+
         <!-- Login Screen -->
-        <style name="Login_Text_Label" parent="TextAppearance.Font.HelveticaNeue">
+        <style name="Login_Text_Label">
             <item name="android:textSize">22sp</item>
             <item name="android:textColor">@color/login_label</item>
         </style>
@@ -21,21 +23,18 @@
             <item name="android:textColor">@android:color/white</item>
         </style>
 
-        <style name="Login_Forgot_Pass" parent="TextAppearance.Font.HelveticaNeue">
+        <style name="Login_Forgot_Pass">
             <item name="android:textSize">15sp</item>
             <item name="android:textAllCaps">true</item>
             <item name="android:textColor">@color/login_button_bg</item>
         </style>
 
-        <style name="TextAppearance.Font.HelveticaNeue" parent="android:TextAppearance">
+       <!-- <style name="TextAppearance.Font.HelveticaNeue" parent="android:TextAppearance">
             <item name="fontPath">fonts/HelveticaNeue/HelveticaNeue-Medium.ttf</item>
         </style>
 
         <style name="TextAppearance.Font.HelveticaNeueBold" parent="android:TextAppearance">
             <item name="fontPath">fonts/HelveticaNeue/HelveticaNeue-Bold.ttf</item>
-        </style>
-
-
-    </style>
+        </style>-->
 
 </resources>

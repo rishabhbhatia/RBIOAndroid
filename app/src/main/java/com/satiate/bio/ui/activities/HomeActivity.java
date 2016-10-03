@@ -3,7 +3,6 @@ package com.satiate.bio.ui.activities;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-import com.androidsocialnetworks.lib.SocialNetworkManager;
 import com.satiate.bio.R;
 
 public class HomeActivity extends AppCompatActivity {
