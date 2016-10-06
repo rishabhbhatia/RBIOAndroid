@@ -4,9 +4,15 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.support.percent.PercentRelativeLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.FrameLayout;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import com.google.android.gms.auth.api.Auth;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
@@ -20,6 +26,9 @@ import com.satiate.bio.R;
 import com.satiate.bio.network.RetrofitNetworkCalls;
 import com.satiate.bio.utils.Const;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
+
 /**
  * Created by Rishabh Bhatia on 10/1/2016.
  */
@@ -27,26 +36,66 @@ import com.satiate.bio.utils.Const;
 public class LoginActivity extends AppCompatActivity implements GoogleApiClient.OnConnectionFailedListener, View.OnClickListener {
 
     private static final int GOOGLE_SIGN_IN = 101;
+    @BindView(R.id.ll_login_label_holder)
+    LinearLayout llLoginLabelHolder;
+    @BindView(R.id.et_login_username)
+    EditText etLoginUsername;
+    @BindView(R.id.ll_login_username_holder)
+    LinearLayout llLoginUsernameHolder;
+    @BindView(R.id.et_login_pass)
+    EditText etLoginPass;
+    @BindView(R.id.ll_login_pass_holder)
+    LinearLayout llLoginPassHolder;
+    @BindView(R.id.ll_login_input_holder)
+    LinearLayout llLoginInputHolder;
+    @BindView(R.id.bt_login)
+    Button btLogin;
+    @BindView(R.id.tv_forgot_pass)
+    TextView tvForgotPass;
+    @BindView(R.id.sign_in_button)
+    SignInButton signInButton;
+    @BindView(R.id.ll_login_buttons_holder)
+    LinearLayout llLoginButtonsHolder;
+    @BindView(R.id.frame_fragments_container)
+    FrameLayout frameFragmentsContainer;
+    @BindView(R.id.prl_login_main_holder)
+    PercentRelativeLayout prlLoginMainHolder;
     private GoogleApiClient mGoogleApiClient;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+        ButterKnife.bind(this);
 
+        measureLoginButton();
         makeNodeServerRequest();
         setupGoogleSignIn();
     }
 
-    private void makeNodeServerRequest()
+    private void measureLoginButton()
     {
+        llLoginUsernameHolder.measure(View.MeasureSpec.UNSPECIFIED, View.MeasureSpec.UNSPECIFIED);
+        etLoginUsername.measure(View.MeasureSpec.UNSPECIFIED, View.MeasureSpec.UNSPECIFIED);
+
+        llLoginPassHolder.setMinimumWidth(llLoginUsernameHolder.getMeasuredWidth());
+        llLoginPassHolder.setMinimumHeight(llLoginUsernameHolder.getMeasuredHeight());
+
+        etLoginPass.setWidth(etLoginUsername.getMeasuredWidth());
+        etLoginPass.setHeight(etLoginUsername.getMeasuredHeight());
+
+        btLogin.setWidth(llLoginUsernameHolder.getMeasuredWidth());
+        btLogin.setHeight(llLoginUsernameHolder.getMeasuredHeight());
+
+    }
+
+    private void makeNodeServerRequest() {
         RetrofitNetworkCalls.makeRetrofitCall(LoginActivity.this,
-                ((BattleApplication)getApplication()).battleNetworkCalls.getTaskList(),
+                ((BattleApplication) getApplication()).battleNetworkCalls.getTaskList(),
                 "hello");
     }
 
-    private void setupGoogleSignIn()
-    {
+    private void setupGoogleSignIn() {
         // Configure sign-in to request the user's ID, email address, and basic
         // profile. ID and basic profile are included in DEFAULT_SIGN_IN.
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
