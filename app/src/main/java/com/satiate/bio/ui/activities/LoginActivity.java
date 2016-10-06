@@ -32,7 +32,13 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
+        makeNodeServerRequest();
         setupGoogleSignIn();
+    }
+
+    private void makeNodeServerRequest()
+    {
+
     }
 
     private void setupGoogleSignIn()
