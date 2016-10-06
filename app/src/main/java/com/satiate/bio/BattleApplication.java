@@ -2,6 +2,7 @@ package com.satiate.bio;
 
 import android.app.Application;
 
+import com.satiate.bio.network.BattleNetworkCalls;
 import com.satiate.bio.utils.Const;
 
 import java.util.concurrent.TimeUnit;
@@ -17,8 +18,9 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class BattleApplication extends Application {
 
-    private OkHttpClient.Builder httpClient;
-    private Retrofit retrofit = null;
+    public OkHttpClient.Builder httpClient;
+    public Retrofit retrofit = null;
+    public BattleNetworkCalls battleNetworkCalls;
 
     @Override
     public void onCreate() {
@@ -39,5 +41,8 @@ public class BattleApplication extends Application {
                 .addConverterFactory(GsonConverterFactory.create())
                 .client(httpClient.build())
                 .build();
+
+        battleNetworkCalls = retrofit.create(BattleNetworkCalls.class);
+
     }
 }
