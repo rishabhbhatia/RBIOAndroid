@@ -21,7 +21,7 @@ import retrofit2.Response;
  */
 public class RetrofitNetworkCalls {
 
-    public static void makeRetrofitCall(final Context context, Call call, final String tag, String callType) {
+    public static void makeRetrofitCall(final Context context, Call call, final String tag) {
 
         try {
             final EventBus eventBus = EventBus.getDefault();

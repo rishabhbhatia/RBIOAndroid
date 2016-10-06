@@ -10,7 +10,7 @@ public class Const {
 
     public static final int RETROFIT_NETWORK_CALL_TIMEOUT = 30;
 
-    public static final String NETWORK_BASE_URL = "192.168.1.7:3000";
+    public static final String NETWORK_BASE_URL = "http://192.168.1.7:3000";
 
     //API CALL URLS
     public static final String GET_USERS = "/users";

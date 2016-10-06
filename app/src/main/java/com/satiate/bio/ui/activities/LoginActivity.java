@@ -17,6 +17,7 @@ import com.google.android.gms.common.SignInButton;
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.satiate.bio.BattleApplication;
 import com.satiate.bio.R;
+import com.satiate.bio.network.RetrofitNetworkCalls;
 import com.satiate.bio.utils.Const;
 
 /**
@@ -39,7 +40,9 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
 
     private void makeNodeServerRequest()
     {
-        ((BattleApplication)getApplication()).battleNetworkCalls.getTaskList();
+        RetrofitNetworkCalls.makeRetrofitCall(LoginActivity.this,
+                ((BattleApplication)getApplication()).battleNetworkCalls.getTaskList(),
+                "hello");
     }
 
     private void setupGoogleSignIn()
