@@ -7,4 +7,7 @@ package com.satiate.bio.utils;
 public class Const {
 
     public static final String TAG = "rishabh";
+
+    public static final int RETROFIT_NETWORK_CALL_TIMEOUT = 30;
+
 }
